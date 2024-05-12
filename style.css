@@ -1,0 +1,333 @@
+:root {
+  --clr-lime-green: hsl(163, 72%, 41%);
+  --clr-bright-red: hsl(356, 69%, 56%);
+
+  --clr-facebook: hsl(208, 92%, 53%);
+  --clr-twitter: hsl(203, 89%, 53%);
+  --clr-instagram: linear-gradient(
+    to right,
+    hsl(37, 97%, 70%),
+    hsl(329, 70%, 58%)
+  );
+  --clr-youTube: hsl(348, 97%, 39%);
+
+  --clr-toggle-dark: linear-gradient(
+    to right,
+    hsl(210, 78%, 56%),
+    hsl(146, 68%, 55%)
+  );
+
+  --clr-toggle-light: hsl(230, 22%, 74%);
+
+  /*Dark Theme*/
+
+  --clr-very-dark-blue-bg: hsl(230, 17%, 14%);
+  --clr-very-dark-blue-top-bg-pattern: hsl(232, 19%, 15%);
+  --clr-dark-desaturated-blue-card-bg: hsl(228, 28%, 20%);
+  --clr-desaturated-blue-text: hsl(228, 34%, 66%);
+  --clr-white-text: hsl(0, 0%, 100%);
+
+  /*Light Theme*/
+
+  --clr-white-bg: hsl(0, 0%, 100%);
+  --clr-very-pale-blue-top-bg-pattern: hsl(225, 100%, 98%);
+  --clr-light-grayish-blue-card-bg: hsl(227, 47%, 96%);
+  --clr-dark-grayish-blue-text: hsl(228, 12%, 44%);
+  --clr-very-dark-blue-text: hsl(230, 17%, 14%);
+
+  --fw-400: 400;
+  --fw-700: 700;
+}
+*,
+*::before,
+*::after {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  color: var(--clr-dark-grayish-blue-text);
+  font-weight: var(--fw-400);
+}
+main {
+  position: relative;
+}
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+.light,
+.dark {
+  position: absolute;
+  width: 100%;
+}
+.show {
+  visibility: visible;
+}
+.hide {
+  visibility: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+h1 {
+  color: var(--clr-very-dark-blue-bg);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: var(--fw-700);
+}
+h2 {
+  color: var(--clr-very-dark-blue-bg);
+  font-size: 3.5rem;
+  font-weight: var(--fw-700);
+}
+h3 {
+  font-size: 1.55rem;
+  margin-block: 2rem 1rem;
+}
+h4 {
+  font-size: 2rem;
+  color: var(--clr-very-dark-blue-text);
+  font-weight: var(--fw-700);
+}
+
+/*HEADER STYLES*/
+header {
+  margin-block: 2rem;
+  font-weight: var(--fw-700);
+}
+.header-left {
+  margin-bottom: 1.5rem;
+}
+.header-left p {
+  font-size: rem.1;
+}
+.header-right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 2px solid var(--clr-desaturated-blue-text);
+  padding-top: 1rem;
+  gap: 0.5rem;
+}
+
+.toggle-container {
+  position: relative;
+  background-color: var(--clr-toggle-light);
+  width: 3.2rem;
+  height: 1.5rem;
+  border-radius: 100px;
+  cursor: pointer;
+}
+.toggle-container:hover {
+  background-color: var(--clr-lime-green);
+}
+
+.toggle-bg {
+  position: absolute;
+}
+.circle {
+  content: "";
+  background-color: var(--clr-white-bg);
+  position: absolute;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  top: 0.15rem;
+  left: 1.8rem;
+  transition: 0.4s;
+}
+
+/*SECTION FOLLOWERS STYLES*/
+.card {
+  background-color: var(--clr-very-pale-blue-top-bg-pattern);
+  border-radius: 0.3rem;
+  border-top: 4px solid var(--clr-facebook);
+  padding-block: 2rem 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  overflow: hidden; /*I thought this would overrule
+  the border-radius on my border for the linear-gradient one but NO*/
+  position: relative; /*this is for the instagram top border*/
+}
+.card:hover,
+.overview-card:hover {
+  background-color: var(--clr-light-grayish-blue-card-bg);
+}
+.followers {
+  display: grid;
+  gap: 1rem;
+}
+.logo-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.follower-box {
+  margin-block: 1rem;
+}
+.follower-box p {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.3rem;
+}
+.today-change {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--clr-lime-green);
+  font-weight: var(--fw-700);
+  font-size: 0.8rem;
+}
+.today-change img {
+  height: 50%;
+  margin-right: 0.3rem;
+}
+
+/* THIS WAS MY FIRST AND SECOND ATTEMPTS
+.instagram {
+  border-top: 4px solid var(--clr-instagram) 30; this is not working
+  border-radius: 0.3rem !important; this is not working
+  border-image: var(--clr-instagram) 30;
+  
+  I tried this from stack overflow but its not working
+  background: -webkit-linear-gradient(
+    to right,
+    hsl(37, 97%, 70%),
+    hsl(329, 70%, 58%)
+  );
+  border-width: 4px;
+  border-style: solid;
+  border-bottom: 0px;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+  I tried this from stack overflow but its not working
+.instagram-inner {
+  background: white;
+  border-radius: 0.3rem;
+  height: 100%;
+  width: 100%;
+}*/
+.instagram {
+  border-style: none;
+  position: relative;
+  background: var(--clr-instagram);
+}
+.instagram-inner {
+  position: absolute;
+  background-color: var(--clr-very-pale-blue-top-bg-pattern);
+  top: 4px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 0.3rem;
+  padding-top: 2rem;
+}
+
+.youtube {
+  border-top: 4px solid var(--clr-bright-red);
+}
+.youtube .today-change p {
+  color: var(--clr-bright-red);
+}
+/*SECTION OVERVIEW-TODAY*/
+.overview-today-top,
+.overview-today-bottom {
+  display: grid;
+  gap: 1rem;
+}
+.overview-today-top {
+  margin-bottom: 1rem;
+}
+
+.overview-card {
+  background-color: var(--clr-very-pale-blue-top-bg-pattern);
+  border-radius: 0.3rem;
+  padding: 1.5rem 1.5rem 1rem 1.5rem;
+  cursor: pointer;
+  font-weight: var(--fw-700);
+}
+.top-line,
+.bottom-line {
+  display: flex;
+  justify-content: space-between;
+}
+.bottom-line {
+  margin-top: 1.5rem;
+}
+.arrow-perc {
+  display: flex;
+  align-items: center;
+  color: var(--clr-lime-green);
+}
+
+.arrow-perc img {
+  height: 10%;
+  margin-right: 0.3rem;
+}
+.facebook-likes .arrow-perc p,
+.total-views .bottom-line .arrow-perc p,
+.youtube-likes .bottom-line .arrow-perc p {
+  color: var(--clr-bright-red);
+}
+/*DARK THEME STYLES*/
+.dark .header-left p {
+  color: var(--clr-desaturated-blue-text);
+}
+.dark .followers .card,
+.dark .instagram-inner,
+.dark .overview-card {
+  background-color: var(--clr-dark-desaturated-blue-card-bg);
+  color: var(--clr-white-text);
+}
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4 {
+  color: var(--clr-white-text);
+}
+.dark .today-change p {
+  color: var(--clr-lime-green);
+}
+.dark .youtube .today-change p {
+  color: var(--clr-bright-red);
+}
+.dark .followers .card:hover,
+.dark .instagram-inner:hover,
+.dark .overview-card:hover {
+  background-color: hsl(229, 23%, 38%);
+}
+.dark {
+  background-color: var(--clr-very-dark-blue-bg);
+  visibility: hidden;
+}
+
+@media (min-width: 468px) {
+  .light,
+  .dark {
+    max-width: 1200px;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+  .header-right {
+    border-top: 0px;
+  }
+  .followers {
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    /*this means our grid will create columns as it needs and as it can fit them and each col 
+    will be a minimum of 10rem and it will expand until a new item of 10rem has the room to be added*/
+  }
+  .overview-today-top,
+  .overview-today-bottom {
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  }
+}
